@@ -58,6 +58,7 @@ resource "aws_iam_role" "lambda_execution_role" {
     "Version": "2012-10-17",
     "Statement": [
       {
+        "Sid": "APIGWAccess",
         "Effect": "Allow",
         "Principal": {
           "Service": "apigateway.amazonaws.com"
@@ -65,6 +66,7 @@ resource "aws_iam_role" "lambda_execution_role" {
         "Action": "lambda:InvokeFunction"
       },
       {
+        "Sid": "STSARAccess",
         "Effect": "Allow",
         "Principal": {
           "Service": "lambda.amazonaws.com"
