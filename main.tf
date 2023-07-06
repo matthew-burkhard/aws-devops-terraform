@@ -5,7 +5,7 @@ terraform {
     organization = "burkhard-technologies"
 
     # name of the Terraform Cloud workspace to store TF state files in
-    workspaces = {
+    workspaces {
       name = "aws-devops-terraform"
     }
   }
