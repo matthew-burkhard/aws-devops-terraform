@@ -24,12 +24,6 @@ provider "aws" {
   region = "us-east-2"
 }
 
-resource "null_resource" "example" {
-  triggers = {
-    value = "A example resource that does nothing!"
-  }
-}
-
 resource "aws_instance" "app_server" {
   ami           = "ami-03f38e546e3dc59e1"
   instance_type = "t2.micro"
