@@ -76,7 +76,7 @@ resource "aws_route53_record" "my_dns_record" {
 
   alias {
     name                   = aws_api_gateway_deployment.my_deployment.invoke_url
-    zone_id                = "Z3OYTZKKMKB833"
+    zone_id                = aws_api_gateway_deployment.my_deployment.execution_arn
     evaluate_target_health = false
   }
 }
