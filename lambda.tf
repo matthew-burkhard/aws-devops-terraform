@@ -61,7 +61,7 @@ resource "aws_iam_role" "lambda_execution_role" {
         "Effect": "Allow",
         "Action": "lambda:InvokeFunction",
         "Resource": "arn:aws:lambda:*:885104876128:*"
-      }
+      },
       {
         "Effect": "Allow",
         "Principal": {
