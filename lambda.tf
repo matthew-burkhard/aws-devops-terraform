@@ -74,7 +74,7 @@ resource "aws_iam_role" "lambda_execution_role" {
   EOF
 }
 
-resource "aws_iam_role_policy_attachment" "attach_apigw_invoke_role" {
-  role       = aws_lambda_function.my_lambda_function.role
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
-}
+# resource "aws_iam_role_policy_attachment" "attach_apigw_invoke_role" {
+#   role       = aws_lambda_function.my_lambda_function.role
+#   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+# }
