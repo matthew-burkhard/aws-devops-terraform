@@ -71,25 +71,5 @@ resource "aws_iam_role" "lambda_execution_role" {
 
 resource "aws_iam_role_policy_attachment" "attach_apigw_invoke_role" {
   role       = aws_lambda_function.my_lambda_function.role
-  policy_arn = aws_iam_policy.apigateway_invoke_lambda.arn
-}
-
-resource "aws_iam_policy" "apigateway_invoke_lambda" {
-  name        = "apigateway-invoke-role"
-  description = "a policy to allow access to apigw executions"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "apigateway.amazonaws.com"
-      },
-      "Action": "lambda:InvokeFunction"
-    }
-  ]
-}
-EOF
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
 }
