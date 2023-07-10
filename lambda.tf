@@ -50,29 +50,29 @@ resource "aws_lambda_function" "my_lambda_function" {
   }
 }
 
-resource "aws_iam_role" "lambda_execution_role" {
-  name = "lambda-execution-role"
+# resource "aws_iam_role" "lambda_execution_role" {
+#   name = "lambda-execution-role"
 
-  assume_role_policy = <<EOF
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": "sts:AssumeRole",
-        "Principal": {
-          "Service": "lambda.amazonaws.com"
-        }
-      },
-      {
-        "Effect": "Allow",
-        "Action": "lambda:InvokeFunction",
-        "Resource": 
-      }
-    ]
-  }
-  EOF
-}
+#   assume_role_policy = <<EOF
+#   {
+#     "Version": "2012-10-17",
+#     "Statement": [
+#       {
+#         "Effect": "Allow",
+#         "Action": "sts:AssumeRole",
+#         "Principal": {
+#           "Service": "lambda.amazonaws.com"
+#         }
+#       },
+#       {
+#         "Effect": "Allow",
+#         "Action": "lambda:InvokeFunction",
+#         "Resource": 
+#       }
+#     ]
+#   }
+#   EOF
+# }
 
 # resource "aws_apigw_policy_attachment"
 
