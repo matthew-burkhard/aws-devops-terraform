@@ -59,20 +59,17 @@ resource "aws_iam_role" "lambda_execution_role" {
     "Statement": [
       {
         "Effect": "Allow",
-        "Action": "lambda:InvokeFunction",
-        "Resource": "arn:aws:lambda:*:885104876128:*"
-      },
-      {
-        "Effect": "Allow",
+        "Action": "sts:AssumeRole",
         "Principal": {
           "Service": "lambda.amazonaws.com"
-        },
-        "Action": "sts:AssumeRole"
+        }
       }
     ]
   }
   EOF
 }
+
+# resource "aws_apigw_policy_attachment"
 
 # resource "aws_iam_role_policy_attachment" "attach_apigw_invoke_role" {
 #   role       = aws_lambda_function.my_lambda_function.role
