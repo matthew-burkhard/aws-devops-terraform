@@ -59,6 +59,11 @@ resource "aws_iam_role" "lambda_execution_role" {
     "Statement": [
       {
         "Effect": "Allow",
+        "Action": "lambda:InvokeFunction",
+        "Resource": "arn:aws:lambda:*:${data.aws_caller_identity.current.account_id}:*"
+      }
+      {
+        "Effect": "Allow",
         "Principal": {
           "Service": "lambda.amazonaws.com"
         },
